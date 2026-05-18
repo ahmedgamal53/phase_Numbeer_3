@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ recipe.name }} – SimpleDelicacy{% endblock %}
+{% block title %}{{ recipe.name }} – SimpleDelicacy{% endblock %}   
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/detail.css' %}">{% endblock %}
 
 {% block content %}
@@ -11,7 +11,6 @@
 
     <div class="detail-row">
 
-        <!-- Image + favourite button -->
         <div class="detail-img-col">
             {% if recipe.image %}
             <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}">
@@ -19,7 +18,6 @@
             <div class="img-placeholder-lg"></div>
             {% endif %}
 
-            <!-- POST form — no JS needed -->
             <form method="post" action="{% url 'toggle_favorite' recipe.pk %}">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{% url 'recipe_detail' recipe.pk %}">
@@ -30,7 +28,6 @@
             </form>
         </div>
 
-        <!-- Ingredients & instructions -->
         <div class="detail-info-col">
             <h3>Ingredients</h3>
             <ul class="ing-list">
@@ -46,7 +43,6 @@
                 {% endfor %}
             </ol>
         </div>
-
     </div>
 
     <a href="{% url 'recipes_list' %}" class="back-link">← Back to Recipes</a>
