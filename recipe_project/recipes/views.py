@@ -199,6 +199,8 @@ def add_recipe_view(request):
     })
 
 
+
+
 @login_required(login_url='signin')
 @admin_required
 def edit_recipe_view(request, pk):
@@ -235,6 +237,7 @@ def edit_recipe_view(request, pk):
     })
 
 
+
 @login_required(login_url='signin')
 @admin_required
 def delete_recipe_view(request, pk):
@@ -244,3 +247,4 @@ def delete_recipe_view(request, pk):
         recipe.delete()
         messages.success(request, f'Recipe "{name}" deleted.')
     return redirect('dashboard')
+
