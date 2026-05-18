@@ -109,16 +109,3 @@ recipe_project/
 | JS scope | Only `dashboard.js` — image preview UI + ingredient DOM rows |
 
 ---
-
-## Checklist
-- [x] No localStorage
-- [x] No fetch / AJAX / JSON endpoints
-- [x] All data in database (SQLite)
-- [x] Django authentication (sessions)
-- [x] Server-side validation (forms.py)
-- [x] Role-based access control (@admin_required)
-- [x] Dynamic navbar (admin vs user via DTL)
-- [x] Image uploads (Pillow + MEDIA_ROOT)
-- [x] Search & filter via GET params + ORM Q objects
-- [x] CSRF protection on every POST form
-- [x] Template inheritance (base.html → all pages)
